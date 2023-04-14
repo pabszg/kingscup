@@ -7,7 +7,7 @@ body {
     width: 100vw;
     font-family: 'Libre Franklin', sans-serif;
     font-size: 18px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 nav {
     height: 100px;
