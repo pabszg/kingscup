@@ -2,5 +2,28 @@ body {
     display: flex;
     justify-content: center;
     width: 100vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
 }
 
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardContainer p {
+    text-align: left;
+}
+
+#activeCard {
+    width: 90vw;
+    max-width: 300px;
+    box-shadow: 5px 5px 15px #CCC;
+    border-radius: 30px;
+    border: solid 1px;
+}
+
+h1 {
+    font-size: 3rem;
+}
