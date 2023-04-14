@@ -26,7 +26,6 @@ function playAgain() {
         console.log(cards)
     }
     else {
-        document.getElementById("play").innerHTML = "Game Over"
         document.getElementById("activeCard").src = "";
     }
 }
