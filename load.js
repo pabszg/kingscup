@@ -22,7 +22,7 @@ function loadImages() {
         document.getElementById("activeCard").src = "cards/" + c + ".svg";
     }
     document.getElementById("activeCard").src = "cards/00.svg";
-    document.getElementById("cardContainer").visibility = "visible";
+    document.getElementById("cardContainer").display = "flex";
 }
 
 loadImages();
