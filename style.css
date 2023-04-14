@@ -16,7 +16,6 @@ nav {
 }
 main {
     width: 100vw;
-    display: flex;
     padding-top: 50px;
 }
 
@@ -41,7 +40,7 @@ main {
 }
 
 #cardContainer p {
-    text-align: left;
+    text-align: center;
 }
 .activeGame {
     display: flex;
