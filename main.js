@@ -1,3 +1,8 @@
+function newGame() {
+    document.getElementById("start").style.display = "none";
+    document.getElementById("cardContainer").style.display = "flex";
+}
+
 function drawCard() {
     if (cards.length == 0) {
         playAgain()

@@ -19,10 +19,9 @@ genCards();
 function loadImages() {
     for (let i = 0; i < cards.length; i++) {
         let c = cards[i];
-        document.getElementById("activeCard").src = "cards/" + c + ".svg";
+        let img = new Image;
+        img.src = "cards/" + c + ".svg";
     }
-    document.getElementById("activeCard").src = "cards/00.svg";
-    document.getElementById("cardContainer").display = "flex";
 }
 
 loadImages();
