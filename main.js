@@ -2,6 +2,7 @@ function newGame() {
     document.getElementById("start").style.display = "none";
     document.getElementById("cardContainer").style.display = "flex";
     document.getElementById("kingCount").innerHTML = 4-kings;
+    rules = classicSpanish;
 }
 
 function kingCheck(c) {
@@ -9,6 +10,7 @@ function kingCheck(c) {
         kings++;
         console.log(kings);
         document.getElementById("kingCount").innerHTML = 4-kings;
+        document.getElementById("kingCount").className = "activeCount";
         document.getElementById("gameName").className = "activeKing";
     }
     if (kings === 4) {
@@ -23,12 +25,13 @@ function drawCard() {
     }
     else {
         document.getElementById("gameName").classList.remove("activeKing");
+        document.getElementById("kingCount").classList.remove("activeCount");
         let cardIndex = Math.floor(Math.random() * cards.length);
         let cardFace = cards[cardIndex];
         let c = cardFace[0]
         document.getElementById("activeCard").src = "cards/" + cardFace + ".svg";
-        document.getElementById("gameName").innerHTML = classicRules[c].ruleName;
-        document.getElementById("gameDesc").innerHTML = classicRules[c].ruleDescription;
+        document.getElementById("gameName").innerHTML = rules[c].ruleName;
+        document.getElementById("gameDesc").innerHTML = rules[c].ruleDescription;
         usedCards.push(cardFace);
         console.log(usedCards);
         cards.splice(cards.indexOf(cardFace), 1);
