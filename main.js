@@ -4,32 +4,42 @@ function newGame() {
     document.getElementById("kingCount").innerHTML = 4-kings;
 }
 
+function kingCheck(c) {
+    if (c === "K") {
+        kings++;
+        console.log(kings);
+        document.getElementById("kingCount").innerHTML = 4-kings;
+    }
+    if (kings === 4) {
+        alert("Drink the cup!");
+        resetGame();
+    }
+}
+
 function drawCard() {
-    if (cards.length == 0) {
+    if (cards.length === 0) {
         playAgain()
     }
     else {
         let cardIndex = Math.floor(Math.random() * cards.length);
         let cardFace = cards[cardIndex];
         let c = cardFace[0]
-        if (c == "K") {
-            kings++;
-            console.log(kings)
-            document.getElementById("kingCount").innerHTML = 4-kings;
-        }
         document.getElementById("activeCard").src = "cards/" + cardFace + ".svg";
         document.getElementById("gameName").innerHTML = classicRules[c].ruleName;
         document.getElementById("gameDesc").innerHTML = classicRules[c].ruleDescription;
         usedCards.push(cardFace);
-        console.log(usedCards)
+        console.log(usedCards);
         cards.splice(cards.indexOf(cardFace), 1);
+        kingCheck(c);
     }
 }
 
 function resetGame() {
+    usedCards.length = 0;
+    kings = 0;
     document.getElementById("activeCard").src = "cards/00.svg";
     document.getElementById("gameName").innerHTML = "King's Cup";
-    usedCards.length = 0;
+    document.getElementById("kingCount").innerHTML = 4-kings;
     genCards()
 }
 

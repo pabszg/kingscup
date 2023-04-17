@@ -39,6 +39,14 @@ main {
     display: none;
 }
 
+.activeKing {
+    position: fixed;
+    font-size: 5rem;
+    z-index: 1000;
+    text-align: center;
+    transition: ease all 1s;
+}
+
 #cardContainer p {
     text-align: center;
 }
