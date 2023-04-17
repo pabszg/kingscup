@@ -9,6 +9,7 @@ function kingCheck(c) {
         kings++;
         console.log(kings);
         document.getElementById("kingCount").innerHTML = 4-kings;
+        document.getElementById("gameName").className = "activeKing";
     }
     if (kings === 4) {
         alert("Drink the cup!");
@@ -21,6 +22,7 @@ function drawCard() {
         playAgain()
     }
     else {
+        document.getElementById("gameName").classList.remove("activeKing");
         let cardIndex = Math.floor(Math.random() * cards.length);
         let cardFace = cards[cardIndex];
         let c = cardFace[0]
